@@ -16,14 +16,19 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
-  return false;
+  word = clean(word);
+  for (int i = 0; i < word.length() / 2; i++) {
+  	if (word.charAt(i) != word.charAt(word.length() - 1 - i)) return false;
+  }
+  return true;
 }
-public String reverse(String str)
+public String clean(String str)
 {
-    String sNew = new String();
-    //your code here
-    return sNew;
+    String cleaned = "";
+    for (int i = 0; i < str.length(); i++) {
+    	if (Character.isLetter(str.charAt(i))) cleaned += str.charAt(i);
+    }
+    return cleaned.toLowerCase();
 }
 
 
